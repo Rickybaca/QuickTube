@@ -1,6 +1,8 @@
 # QuickTube
 Project Name: QuickTube 
 Team Members: Ricky Baca, Antonio Felix, Daichi Kanasugi, Maxillian Renga 
+
+
 Class: CST 363 Internet Programming 
 
 Project Description
