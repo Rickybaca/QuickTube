@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>QuickTube Sign Up</title>
+  <link href="styles/LogInStyles.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="quicktubeLogo.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="img/favicon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+  <main class="d-flex align-items-center justify-content-center">
+    <div class="card">
+      <div class="card-body p-4">
+        <h1>Sign Up</h1>
+        <p class="text-muted">Enter username and password</p>
+        <form>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Username" name="username">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="icon-lock"></i></span>
+            </div>
+            <input type="password" class="form-control" placeholder="Password" name="password">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="icon-lock"></i></span>
+            </div>
+            <input type="password" class="form-control" placeholder="Repeat Password" name="password-repeat">
+          </div>
+          <p>By creating an account you agree to our <a href="privacyPolicy.html" style="color:dodgerblue">Terms & Privacy</a>.</p>
+          <button id="signupbtn" type="button" class="btn btn-block btn-success">Sign Up</button>
+        </form>
+      </div>
+      <div class="card-footer p-4">
+        <div id="footerBttn">
+          <button id="cancelBttn" type="button" class="btn btn-block btn-warning">Cancel</button>
+          <button id="mainPage" type="button" class="btn btn-block btn-danger">Main Page</button>
+        </div>
+        <div id="message" class="alert alert-danger open-hidden" role="alert">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script>
+    /* global $ */
+    $(document).ready(function() {
+
+      $("#signupbtn").on('click', function() {
+        $("#message").html("");
+        $.ajax({
+          type: "POST",
+          url: "api/signUp.php",
+          dataType: "json",
+          data: {
+            "username": $("[name=username]").val(),
+            "password": $("[name=password]").val(),
+            "password-repeat": $("[name=password-repeat").val()
+          },
+          success: function(data, status) {
+            if (data.createAccount) {
+              window.location = "login.html";
+            }
+            else {
+              if(data.passwordCheck == false){
+                 $("#message").html("Password do not match");
+                  $("#message").removeClass("open-hidden");
+                }
+              if (data.usernameCheck == false){
+                  $("#message").html("Username is taken.");
+                  $("#message").removeClass("open-hidden");
+              }
+            }
+          }
+        });
+      });
+      
+      $("#cancelBttn").on('click',function(){
+        window.location = "login.html";
+      });
+      
+      $("#mainPage").on('click',function(){
+        window.location = "home.html";
+      });
+    });
+  </script>
+</body>
+
+</html>

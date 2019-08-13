@@ -1,0 +1,124 @@
+.heading, #random, #search, #login, #keyword, #commit, #login, #signin, #searchResults, #hist, .mostPopular, #popularResults, .popularResults{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center; 
+}
+
+.left, .center, .right{
+    display: flex;
+}
+
+.left{
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: auto;
+}
+
+.center{
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.right{
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin: auto;
+}
+
+.heading{
+    padding-top: 10px;
+}
+
+.mostViewed, .mostPopular, .mostDisliked{
+    padding-right: 50px;
+    padding-bottom: 50px;
+
+    
+}
+
+footer{
+    border-top: black 100px;
+    text-align:center;
+}
+
+
+#body, body, head, header{
+    background-color: orange;
+}
+
+#header{
+    background-color: #00a2e8;
+}
+
+.addPlaylist, #add_pop_playlist0, #add_pop_playlist1, #add_pop_playlist2, #add_pop_playlist3, #add_pop_playlist4, #add_pop_playlist5, #add_search_playlist0,
+#add_search_playlist1, #add_search_playlist2, #add_search_playlist3, #add_search_playlist4, #add_search_playlist5, #commit, #signin, #account,
+#logoutButton, #mainButton, #passButton{
+    background-color: orange;
+}
+
+.logo, img{
+    padding-left: 5px;
+}
+
+#historyFont, #playlistHeader, #userHeader {
+    font-size: 40px;
+}
+
+#textCenter{
+    font-size: 50px;
+}
+
+#passHeader{
+    font-size: 25px;
+}
+
+.changePass, #newPass, #passButton{
+    display:flex;
+}
+
+#playlistHeader, #passHeader, #historyFont{
+    border-top-style: solid;
+    border-color: black;
+    border-width: thin;
+    width: 99%;
+}
+
+/*body{*/
+/*    padding-left: 10px;*/
+/*}*/
+
+.mainBody{
+
+    padding-left: 10px;
+}
+
+#user{
+    font-size:50px;
+}
+
+.deleteBttn{
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+}
+
+.heading{
+    background-color:  #3298E3;
+}
+
+#text{
+    color: white;
+}
+#playlist{
+    background-color:#ffbb99;
+}
+#historyT, td{
+    text-align: center;
+}

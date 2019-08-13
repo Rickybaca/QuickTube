@@ -1,0 +1,9 @@
+{"web":
+    {"client_id":"195085690092-3hh4i7i6mh4png948uvbc5h08knc7nps.apps.googleusercontent.com",
+    "project_id":"quicktube",
+    "auth_uri":"https://accounts.google.com/o/oauth2/auth",
+    "token_uri":"https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret":"4goqtNvNeT9_uhnKhcTxpKYi"
+    }
+}
